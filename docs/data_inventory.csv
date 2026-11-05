@@ -1,0 +1,6 @@
+﻿file,rows,column,missing_count,missing_pct,example_values
+Erasmus_2014-2023_aggregate_NUTS.csv,588109,OD_ID,0,0.0,AL012_BG331 | AL012_BG411 | AL012_CZ080
+Erasmus_2014-2023_aggregate_NUTS.csv,588109,ORIGIN,0,0.0,AL012 | AL013 | AL015
+Erasmus_2014-2023_aggregate_NUTS.csv,588109,DESTINATION,0,0.0,BG331 | BG411 | CZ080
+Erasmus_2014-2023_aggregate_NUTS.csv,588109,YEAR,0,0.0,2020 | 2021 | 2022
+Erasmus_2014-2023_aggregate_NUTS.csv,588109,COUNT,0,0.0,4 | 3 | 6
