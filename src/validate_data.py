@@ -39,7 +39,10 @@ b = df[df["YEAR"] == 2019][
 ].set_index("OD_ID")
 
 comparison = a.join(
-    b, how="outer", suffixes=("_2018", "_2019")
+    b,
+    how="outer",
+    lsuffix="_2018",
+    rsuffix="_2019"
 )
 
 shared = comparison.dropna()

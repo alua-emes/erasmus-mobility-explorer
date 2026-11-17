@@ -73,7 +73,7 @@ balance["net_mobility"] = (
 )
 
 balance.to_csv(
-    OUT / "country_balance.csv",
+    OUT / "country_balance_by_year.csv",
     index=False
 )
 

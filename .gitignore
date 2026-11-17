@@ -1,3 +1,4 @@
+
 # Python
 __pycache__/
 *.py[cod]
@@ -6,21 +7,32 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
-# Large/generated data: keep outside Git
+# Raw and generated data
 /data/raw/*
 /data/interim/*
 /data/processed/*
+
 !/data/raw/.gitkeep
 !/data/interim/.gitkeep
 !/data/processed/.gitkeep
 
-# Outputs
-/visualizations/*.html
-/visualizations/*.png
-/visualizations/*.pdf
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
 
-# Editor/OS
+# Local database storage
+/postgres_data/
+
+# Backups and archives
+*_backup.ipynb
+* — копия.ipynb
+*.zip
+
+# Editor and operating system
 .vscode/
 .DS_Store
 Thumbs.db
-.env
+
+# Project backups
+/version1/
