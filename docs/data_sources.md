@@ -70,23 +70,35 @@ Note: The associated scientific publication
 describes the earlier 2014–2022 dataset.
 This project uses the updated 2014–2023 release.
 
+
 ## Data Acquisition
 
-Download the following file from Zenodo:
+The dataset is automatically downloaded from Zenodo by
+`src/download_data.py` during pipeline execution.
 
+**File:**
 Erasmus_2014-2023_aggregate_NUTS.csv
 
-Direct download:
+**Direct download:**
 
 https://zenodo.org/records/16737523/files/Erasmus_2014-2023_aggregate_NUTS.csv?download=1
 
-Place the file in:
+**Local path:**
 
-data/raw/Erasmus_2014-2023_aggregate_NUTS.csv
+`data/raw/Erasmus_2014-2023_aggregate_NUTS.csv`
 
-Expected MD5 checksum:
+**Expected MD5 checksum:**
 
-048259d0c7fad5e792e13d0642aee0d8
+`048259d0c7fad5e792e13d0642aee0d8`
+
+Before loading data into PostgreSQL, the pipeline checks
+whether the file exists and verifies its MD5 checksum.
+
+If the file is missing or its checksum does not match,
+the dataset is downloaded automatically and verified
+before being used.
+
+No manual dataset preparation is required.
 
 ## Data Processing
 
