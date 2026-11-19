@@ -230,6 +230,34 @@ All project components were completed individually. Actual time spent (hours):
 | Benchmarks and measurements | [ ] |
 | Notebook report and README | [ ] |
 
+## Reproducibility Verification
+
+On November 19, 2026, the project was tested using a fresh
+GitHub clone in a separate directory with a newly created
+PostgreSQL volume.
+
+The documented setup instructions were sufficient to:
+
+- Build the Docker image.
+- Initialize a new PostgreSQL database.
+- Automatically download and verify the dataset.
+- Load all 588,109 records.
+- Pass database validation.
+- Generate all four analytical CSV outputs.
+
+The pipeline completed successfully with exit code 0.
+
+| Measurement | Fresh clone result |
+|---|---:|
+| Records loaded | 588,109 |
+| Database loading time | 3.756 s |
+| Pipeline execution time including download | 10.409 s |
+| SQL analytical outputs | 4/4 |
+| Database validation | PASS |
+| Exit code | 0 |
+
+Docker build caching was available during this test.
+
 ## Limitations
 
 - All measurements come from one laptop and three data sizes.
