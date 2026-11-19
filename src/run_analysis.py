@@ -16,12 +16,9 @@ QUERY_NAMES = [
 ]
 
 
-def run_analysis():
+def run_analysis(output_dir=OUTPUT_DIR):
 
-    OUTPUT_DIR.mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     queries = [
         query.strip()
@@ -33,6 +30,8 @@ def run_analysis():
 
     if len(queries) != len(QUERY_NAMES):
         raise ValueError("Unexpected number of SQL queries")
+
+    timings = {}
 
     print("Starting SQL analysis...")
 
@@ -52,8 +51,9 @@ def run_analysis():
                 rows = cur.fetchall()
 
                 elapsed = time.perf_counter() - start
+                timings[name] = elapsed
 
-                output_path = OUTPUT_DIR / f"{name}.csv"
+                output_path = output_dir / f"{name}.csv"
 
                 with output_path.open(
                     "w",
@@ -71,6 +71,8 @@ def run_analysis():
                 )
 
     print("SQL analysis completed successfully!")
+
+    return timings
 
 
 if __name__ == "__main__":

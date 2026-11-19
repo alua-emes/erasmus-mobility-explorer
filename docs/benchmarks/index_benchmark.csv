@@ -1,0 +1,7 @@
+condition,run,execution_ms,scan_type,index_bytes,index_creation_seconds
+without_index,1,23.888,Seq Scan,0,0
+without_index,2,24.498,Seq Scan,0,0
+without_index,3,22.681,Seq Scan,0,0
+with_index,1,0.077,Index Scan,4177920,0.3393775659997118
+with_index,2,0.08,Index Scan,4177920,0.3393775659997118
+with_index,3,0.063,Index Scan,4177920,0.3393775659997118

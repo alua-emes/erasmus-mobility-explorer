@@ -19,10 +19,10 @@ REQUIRED_COLUMNS = {
 }
 
 
-def load_data():
+def load_data(data_path=DATA_PATH):
 
-    if not DATA_PATH.is_file():
-        raise FileNotFoundError(DATA_PATH)
+    if not data_path.is_file():
+        raise FileNotFoundError(data_path)
 
     print("Loading Erasmus+ mobility data...")
 
@@ -38,7 +38,7 @@ def load_data():
             )
 
             # Load records using PostgreSQL COPY
-            with DATA_PATH.open(
+            with data_path.open(    
                 "r",
                 encoding="utf-8-sig",
                 newline=""
