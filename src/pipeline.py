@@ -4,7 +4,7 @@ import time
 from database import ROOT, get_connection
 from load_database import load_data
 from run_analysis import run_analysis
-
+from download_data import ensure_dataset
 
 def initialize_database():
 
@@ -66,17 +66,20 @@ def main():
     print("=" * 50)
     print("ERASMUS+ MOBILITY DATA PIPELINE")
     print("=" * 50)
+    
+    print("[1/5] Checking dataset...")
+    ensure_dataset()
 
-    print("\n[1/4] Initializing database...")
+    print("\n[2/5] Initializing database...")
     initialize_database()
 
-    print("\n[2/4] Loading dataset...")
+    print("\n[3/5] Loading dataset...")
     load_data()
 
-    print("\n[3/4] Validating database...")
+    print("\n[4/5] Validating database...")
     validate_database()
 
-    print("\n[4/4] Running SQL analysis...")
+    print("\n[5/5] Running SQL analysis...")
     run_analysis()
 
     elapsed = time.perf_counter() - start
